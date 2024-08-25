@@ -2,7 +2,7 @@
 /// <reference types="redis" />
 
 import {EventEmitter} from 'events';
-import {ClientOpts, RedisClient} from 'redis';
+import {RedisClientOptions, RedisClientType} from 'redis';
 
 declare class BeeQueue<T = any> extends EventEmitter {
   name: string;
@@ -91,7 +91,7 @@ declare namespace BeeQueue {
     stallInterval?: number;
     nearTermWindow?: number;
     delayedDebounce?: number;
-    redis?: ClientOpts | RedisClient;
+    redis?: RedisClientOptions | RedisClientType;
     isWorker?: boolean;
     getEvents?: boolean;
     sendEvents?: boolean;
